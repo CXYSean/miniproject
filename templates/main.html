@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    iframe {
+    margin: 0 auto;
+    display:block;
+   }
+
+  </style>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">County Level Cancer Analysis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/trend">EDA <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/models">Model <span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            </form>
+        </div>
+      </nav>
+
+
+    <div>
+    <h2 style="text-align:center">Map View</h2>
+    <iframe src="http://cancergraph.cxysean.georgetown.domains/" height = 800px width=70% frameBorder="0"></iframe>
+    </div>
+
+
+  <script src="js/scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/try.js"></script>	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJtdcsnHBIwBNNMenvnXo5Uob2XPXGjoM&callback=initMap"
+    async defer></script>
+
+</body>
+</html>

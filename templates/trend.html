@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="/static/demo.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <style>
+    .center {
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    iframe {
+    margin: 0 auto;
+    display:block;
+   }
+
+
+   /* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+  </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">County Level Cancer Analysis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/trend">EDA <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/models">Model <span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+
+    <div>
+    <h2 style="text-align:center">Trend Histogram</h2>
+    <iframe src="http://trendhist.cxysean.georgetown.domains/trend_hist.html" height = 400px width=40% frameBorder="0"></iframe>
+    </div>
+
+    <div style="text-align:center;">
+      <h2 for="f" >Plant fuel and superfund boxplot:</h2>
+
+      <select id="fuel_boxplot" onchange="fuelChange()">
+        <option value = "overall">Overall</option>
+        <option value="superfund">Superfund</option>
+        <option value="Waste">Waste</option>
+        <option value="Coal">Coal</option>
+        <option value="Hydro">Hydro</option>
+        <option value="Oil">Oil</option>
+        <option value="Geothermal">Geothermal</option>
+        <option value="Other">Other</option>
+        <option value="Gas">Gas</option>
+        <option value="Biomass">Biomass</option>
+        <option value="Cogeneration">Cogeneration</option>
+        <option value="Storage">Storage</option>
+        <option value="Petcoke">Petcoke</option>
+        <option value="Nuclear">Nuclear</option>
+        <option value="Wind">Wind</option>
+        <option value="Solar">Solar</option>
+      </select>
+    </div>
+    <div>
+      <iframe id="fuel" src="http://trendhist.cxysean.georgetown.domains/overall_boxplot.html" height = 400px width=40% frameBorder="0"></iframe>
+    </div>
+
+    <div>
+      <h2 style="text-align:center">Correlation Bar plot</h2>
+      <img src="http://trendhist.cxysean.georgetown.domains/correlation.jpg" alt="correlation" class="center" width="1000" height="1200">
+    </div>    
+
+  <script>
+    function fuelChange() {
+      var x = "http://trendhist.cxysean.georgetown.domains/"+document.getElementById("fuel_boxplot").value+"_boxplot.html";
+      document.getElementById('fuel').src = x;        
+  }
+    
+  </script>
+  <script src="js/scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/try.js"></script>	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJtdcsnHBIwBNNMenvnXo5Uob2XPXGjoM&callback=initMap"
+    async defer></script>
+
+</body>
+</html>
